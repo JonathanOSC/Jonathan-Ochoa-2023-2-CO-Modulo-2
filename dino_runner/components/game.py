@@ -27,8 +27,6 @@ class Game:
         self.score = 0
         self.highest_score = 0
 
-        self.you_score = 0
-
     def execute(self):
         self.running = True
         while self.running:
@@ -83,6 +81,7 @@ class Game:
     def show_menu(self):
         half_screen_height = SCREEN_HEIGHT // 2
         half_screen_widht = SCREEN_WIDTH // 2
+
         self.menu.reset_screen_color(self.screen)
 
         if self.death_count == 0:
@@ -96,7 +95,8 @@ class Game:
             self.menu.new_message(f"Highest score: {self.highest_score}", 120, self.screen)
             self.menu.new_message(f"Total deaths: {self.death_count}" , 150, self.screen) 
 
-        self.screen.blit(ICON, (half_screen_widht - 50, half_screen_height - 140))
+        self.screen.blit(ICON, (half_screen_widht - 50, half_screen_height - 140))    
+
         self.menu.update(self)
     
     def update_score(self):
@@ -104,7 +104,7 @@ class Game:
 
         if self.score % 100 == 0 and self.game_speed < 500:
             self.game_speed += 5
-        
+
         if self.score >= self.highest_score:
             self.highest_score = self.score
         

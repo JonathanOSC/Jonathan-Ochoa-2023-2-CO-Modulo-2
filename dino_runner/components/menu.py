@@ -36,10 +36,9 @@ class Menu:
         self.text = self.font.render(message, True, (0,0,0))
         self.text_rect = self.text.get_rect()
         self.text_rect.center = (self.HALF_SCREEN_WIDTH, self.HALF_SCREEN_HEIGHT)
-
+    
     def new_message(self, message, height, screen):
         self.text = self.font.render(message, True, (0,0,0))
         self.text_rect = self.text.get_rect()
         self.text_rect.center = (self.HALF_SCREEN_WIDTH, self.HALF_SCREEN_HEIGHT + height)
         screen.blit(self.text, self.text_rect)
-
