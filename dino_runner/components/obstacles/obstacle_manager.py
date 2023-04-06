@@ -34,6 +34,7 @@ class ObstacleManager:
                     game.death_count += 1
                     game.playing = False
                     break
+                
                 else:
                     self.obstacles.remove(obstacle)
                     

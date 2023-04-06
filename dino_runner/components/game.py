@@ -11,6 +11,7 @@ class Game:
     GAME_SPEED = 20
 
     def __init__(self):
+
         pygame.init()
         pygame.display.set_caption(TITLE)
         pygame.display.set_icon(ICON)
@@ -38,8 +39,8 @@ class Game:
         pygame.quit()
 
     def run(self):
-        self.obstacle_manager.reset_obstacles()
         self.player.reset_dinosaur()
+        self.obstacle_manager.reset_obstacles()
         self.score = 0
         self.game_speed = self.GAME_SPEED
         self.power_up_manager.reset()
@@ -54,6 +55,7 @@ class Game:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 self.playing = False
+
 
     def update(self):
         user_input = pygame.key.get_pressed()
@@ -125,8 +127,15 @@ class Game:
         if self.player.has_power_up:
             time_to_show = round((self.player.power_time_up - pygame.time.get_ticks())/1000, 2) 
 
+
+                
             if time_to_show >= 0:
-                self.menu.new_message(f"{self.player.type.capitalize()} enable for {time_to_show} seconds", -200, self.screen)       
+                self.menu.new_message(f"{self.player.type.capitalize()} enable for {time_to_show} seconds", -200, self.screen)  
+
+            ##
             else:
                 self.player.has_power_up = False
+                self.player.dino_fly = False
                 self.player.type = DEFAULT_TYPE
+                
+                

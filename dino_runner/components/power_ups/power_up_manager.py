@@ -2,6 +2,7 @@ import pygame
 import random
 
 from dino_runner.components.power_ups.shield import Shield
+from dino_runner.components.power_ups.wings import Wings
 
 
 class PowerUpManager:
@@ -12,7 +13,13 @@ class PowerUpManager:
 
 
     def generate_power_up(self):
-        power_up = Shield()
+
+        power_choice = random.randint(0, 1)
+        if power_choice == 0:
+            power_up = Shield()
+        else:
+            power_up = Wings()
+            
         self.when_appears += random.randint(150, 250)
         self.power_ups.append(power_up)
 
@@ -26,6 +33,14 @@ class PowerUpManager:
             if game.player.dino_rect.colliderect(power_up.rect):
                 power_up.start_time = pygame.time.get_ticks()
                 game.player.type = power_up.type
+
+                if game.player.type == "wings":
+                    game.player.dino_fly = True
+                    game.game_speed -= 10
+                else:
+                    game.player.type = power_up.type
+                    game.player.dino_fly = False
+
                 game.player.has_power_up = True
                 game.player.power_time_up = power_up.start_time + (self.duration * 1000)
                 self.power_ups.remove(power_up)

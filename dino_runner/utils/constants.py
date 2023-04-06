@@ -26,8 +26,14 @@ RUNNING_HAMMER = [
     pygame.image.load(os.path.join(IMG_DIR, "Dino/DinoRun2.png")),
 ]
 
-JUMPING = pygame.image.load(os.path.join(IMG_DIR, "Dino/DinoJump.png"))
-JUMPING_SHIELD = pygame.image.load(os.path.join(IMG_DIR, "Dino/DinoJumpShield.png"))
+JUMPING = [
+    pygame.image.load(os.path.join(IMG_DIR, "Dino/DinoJump.png")),
+    pygame.image.load(os.path.join(IMG_DIR, "Dino/DinoJump.png")) ,   
+]
+JUMPING_SHIELD = [
+    pygame.image.load(os.path.join(IMG_DIR, "Dino/DinoJumpShield.png")),
+    pygame.image.load(os.path.join(IMG_DIR, "Dino/DinoJumpShield.png")),
+]
 JUMPING_HAMMER = pygame.image.load(os.path.join(IMG_DIR, "Dino/DinoJumpHammer.png"))
 
 DUCKING = [
@@ -61,9 +67,15 @@ BIRD = [
     pygame.image.load(os.path.join(IMG_DIR, "Bird/Bird2.png")),
 ]
 
+DINO_WITH_BIRD = [
+    pygame.image.load(os.path.join(IMG_DIR, "Dino/Bird_with_dino.png")),
+    pygame.image.load(os.path.join(IMG_DIR, "Dino/Bird_with_dino_2.png")),
+]
+
 CLOUD = pygame.image.load(os.path.join(IMG_DIR, 'Other/Cloud.png'))
 SHIELD = pygame.image.load(os.path.join(IMG_DIR, 'Other/shield.png'))
 HAMMER = pygame.image.load(os.path.join(IMG_DIR, 'Other/hammer.png'))
+WINGS = pygame.image.load(os.path.join(IMG_DIR, 'Other/wings.jpg'))
 
 BG = pygame.image.load(os.path.join(IMG_DIR, 'Other/Track.png'))
 
@@ -74,3 +86,4 @@ DEFAULT_TYPE = "default"
 FONT_STYLE = "freesansbold.ttf"
 
 SHIELD_TYPE = "shield"
+WINGS_TYPE = "wings"
