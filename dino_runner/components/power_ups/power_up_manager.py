@@ -36,10 +36,7 @@ class PowerUpManager:
 
                 if game.player.type == "wings":
                     game.player.dino_fly = True
-                    game.game_speed -= 10
-                else:
-                    game.player.type = power_up.type
-                    game.player.dino_fly = False
+                    game.game_speed -= 15
 
                 game.player.has_power_up = True
                 game.player.power_time_up = power_up.start_time + (self.duration * 1000)

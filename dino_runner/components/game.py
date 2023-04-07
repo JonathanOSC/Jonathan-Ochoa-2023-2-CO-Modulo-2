@@ -129,7 +129,7 @@ class Game:
 
 
                 
-            if time_to_show >= 0:
+            if time_to_show >= 0 and self.player.type != DEFAULT_TYPE:
                 self.menu.new_message(f"{self.player.type.capitalize()} enable for {time_to_show} seconds", -200, self.screen)  
 
             ##

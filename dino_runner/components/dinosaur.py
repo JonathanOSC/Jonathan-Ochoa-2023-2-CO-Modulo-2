@@ -6,6 +6,7 @@ from dino_runner.utils.constants import RUNNING, JUMPING, DUCKING,SHIELD_TYPE, D
 RUN_IMG = {DEFAULT_TYPE: RUNNING, SHIELD_TYPE: RUNNING_SHIELD, WINGS_TYPE: DINO_WITH_BIRD}
 JUMP_IMG = {DEFAULT_TYPE: JUMPING, SHIELD_TYPE: JUMPING_SHIELD, WINGS_TYPE: DINO_WITH_BIRD}
 DUCK_IMG = {DEFAULT_TYPE: DUCKING, SHIELD_TYPE: DUCKING_SHIELD, WINGS_TYPE: DINO_WITH_BIRD}
+# FLY_IMG = {DEFAULT_TYPE: DINO_WITH_BIRD}
 
 
 
@@ -92,12 +93,11 @@ class Dinosaur(Sprite):
     def fly(self, user_input):
         self.image = RUN_IMG[self.type][self.step_index // 5]
 
-        
 
         self.dino_rect.y += self.velocidad_y
 
-        if self.dino_fly:
-            self.dino_rect.y -= 10
+        # if self.dino_fly:
+        #     self.dino_rect.y -= 10
 
         self.step_index += 1
 
